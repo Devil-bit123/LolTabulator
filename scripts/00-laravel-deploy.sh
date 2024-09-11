@@ -13,6 +13,12 @@ if [ "$GENERATE_KEY" = true ]; then
     php /var/www/html/artisan key:generate
 fi
 
+# Check if RUN_MIGRATIONS is set and true
+if [ "$RUN_MIGRATIONS" = true ]; then
+    echo "Running migrations..."
+    php /var/www/html/artisan migrate --force
+fi
+
 echo "Caching config..."
 php /var/www/html/artisan config:cache
 
