@@ -27,7 +27,7 @@ class PlayerController extends Controller
         try {
 
             //dd($request);
-            $request->merge(['ip' => $request->ip()]);
+            //$request->merge(['ip' => $request->ip()]);
 
             // Validar los datos entrantes
             $validatedData = $request->validate(Player::$rules);
